@@ -1,9 +1,14 @@
 package pages;
 
+import constants.Constants;
 import locators.Locators;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import java.time.Duration;
 
 public class HomePage extends BasePage {
 
@@ -46,8 +51,8 @@ public class HomePage extends BasePage {
     }
 
     public boolean isBuyNowFilterSelected() {
-        WebElement visibleInput = getVisibleElement(locators.allBuyNowFilters);
-        return visibleInput.isSelected();
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.id(Constants.ALL_BUY_NOW_FILTERS)));
+        return element.isSelected();
     }
 
     public boolean isBuyNowOptionAndPriceVisible() {

@@ -23,11 +23,6 @@ public class AuctionPage extends BasePage {
         return locators.currentPrice.isDisplayed();
     }
 
-    public String getPriceText() {
-        waitForVisible(locators.currentPrice);
-        return locators.currentPrice.getText();
-    }
-
     public boolean isTimeLeftDisplayed() {
         waitForVisible(locators.timeLeft);
         return locators.timeLeft.isDisplayed();

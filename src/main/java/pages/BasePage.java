@@ -53,7 +53,7 @@ public class BasePage {
         waitForClickable(optionLink).click();
     }
 
-    protected WebElement getVisibleElement(List<WebElement> elements) {
+    protected WebElement getFirstEnabledElement(List<WebElement> elements) {
         for (WebElement element : elements) {
             try {
                 if (element.isEnabled()) {
