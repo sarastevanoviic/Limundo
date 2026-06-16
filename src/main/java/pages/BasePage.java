@@ -36,13 +36,6 @@ public class BasePage {
         waitForVisible(element).sendKeys(text);
     }
 
-    protected void click(WebElement element) {
-        waitForClickable(element).click();
-    }
-
-    protected String getText(WebElement element) {
-        return waitForVisible(element).getText().trim();
-    }
 
     protected void clickByJs(WebElement element) {
         js.executeScript("arguments[0].click();", element);
