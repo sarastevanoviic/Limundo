@@ -10,12 +10,12 @@ public class SearchAndAuctionTest extends BaseTest {
     @Test
     public void testSearchAndSortAuctionsThenVerifyProductDetailsTest() {
         new HomePage(driver)
-                .setSearhBar(Constants.VALID_SEARCH_TERM) // 1. Ukucaj pojam
-                .sortByPrice()                             // 2. Sortiraj
-                .clickOnFirstAuction()                     // 3. Klikni (prelazi na AuctionPage)
-                .verifyAuctionTitle(Constants.VALID_SEARCH_TERM) // 4. Verifikuj naslov
-                .verifyPriceDisplayed()                    // 5. Verifikuj cenu
-                .verifyTimeLeftDisplayed()                 // 6. Verifikuj vreme
+                .setSearhBar(Constants.VALID_SEARCH_TERM)
+                .sortByPrice()
+                .clickOnFirstAuction()
+                .verifyAuctionTitle(Constants.VALID_SEARCH_TERM)
+                .verifyPriceDisplayed()
+                .verifyTimeLeftDisplayed()
                 .verifyBidCountDisplayed();
     }
 
