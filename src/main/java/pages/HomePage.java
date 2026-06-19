@@ -22,13 +22,13 @@ public class HomePage extends BasePage {
 
     public HomePage setSearhBar(String text) {
         set(locators.searchBar, text);
-        clickByJs(locators.searchButton);
+        click(locators.searchButton);
         return this;
     }
 
     public HomePage setCategory() {
         waitForClickable(locators.category);
-        clickByJs(locators.category);
+        click(locators.category);
         return this;
     }
 
