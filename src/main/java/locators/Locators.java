@@ -29,7 +29,7 @@ public class Locators {
     @FindBy(css = Constants.AUCTION_TITLE)
     public WebElement auctionTitle;
 
-    @FindBy(id = Constants.CURRENT_PRICE)
+    @FindBy(css = Constants.CURRENT_PRICE)
     public WebElement currentPrice;
 
     @FindBy(id = Constants.TIME_LEFT)

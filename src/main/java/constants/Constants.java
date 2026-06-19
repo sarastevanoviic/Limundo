@@ -14,7 +14,7 @@ public class Constants {
     public static final String SORT_BY_PRICE_ASC = "a[data-type='cena_ASC']";
     public static final String FRIST_AUCTION_ITEM = ".list-view-listing-item:first-of-type .content-top h3 a";
     public static final String AUCTION_TITLE = "h1.product-title.hidden-md-down";
-    public static final String CURRENT_PRICE = "najveci_bid";
+    public static final String CURRENT_PRICE = ".product-buy-now p span:nth-child(2)";
     public static final String TIME_LEFT = "preostaloVreme";
     public static final String BID_COUNT = "broj-bidova-prikaz";
     public static final String NO_RESULT_MESSAGE = ".did-you-mean-info p:nth-of-type(2)";

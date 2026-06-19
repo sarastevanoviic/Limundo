@@ -1,8 +1,12 @@
 package pages;
 
+import constants.Constants;
 import locators.Locators;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AuctionPage extends BasePage {
     private Locators locators;
@@ -18,18 +22,37 @@ public class AuctionPage extends BasePage {
         return locators.auctionTitle.getText();
     }
 
-    public boolean isPriceDisplayed() {
+    public AuctionPage verifyAuctionTitle(String expectedTerm) {
+        String actualTitle = getAuctionTitleText().toLowerCase();
+        assertTrue(actualTitle.contains(expectedTerm.toLowerCase()), Constants.TITLE_NOT_CONTAIN_IPHONE_ERROR);
+        return this;
+    }
+
+    public AuctionPage verifyPriceDisplayed() {
         waitForVisible(locators.currentPrice);
-        return locators.currentPrice.isDisplayed();
+        assertTrue(locators.currentPrice.isDisplayed(), Constants.PRICE_NOT_DISPLAYED_ERROR);
+        return this;
     }
 
-    public boolean isTimeLeftDisplayed() {
+    public AuctionPage verifyTimeLeftDisplayed() {
         waitForVisible(locators.timeLeft);
-        return locators.timeLeft.isDisplayed();
+        assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        return this;
     }
 
-    public boolean isBidCountDisplayed() {
+    public AuctionPage verifyBidCountDisplayed() {
         waitForVisible(locators.bidCount);
-        return locators.bidCount.isDisplayed();
+        assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        return this;
+    }
+
+    public AuctionPage verifyBuyNowOptionAndPriceVisible() {
+        waitForVisible(locators.buyNowBtn);
+
+        boolean isBtnVisible = locators.buyNowBtn.isDisplayed();
+        boolean isPriceVisible = locators.buyNowPrices.isDisplayed();
+
+        Assertions.assertTrue(isBtnVisible && isPriceVisible, Constants.BUY_NOW_OPTION_MISSING_MSG);
+        return this;
     }
 }
