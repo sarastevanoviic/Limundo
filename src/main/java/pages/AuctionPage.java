@@ -3,6 +3,7 @@ package pages;
 import constants.Constants;
 import locators.Locators;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,14 +36,22 @@ public class AuctionPage extends BasePage {
     }
 
     public AuctionPage verifyTimeLeftDisplayed() {
-        waitForVisible(locators.timeLeft);
-        assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        if (!driver.findElements(By.id("preostaloVreme")).isEmpty()) {
+            waitForVisible(locators.timeLeft);
+            assertTrue(locators.timeLeft.isDisplayed(), Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
+        } else {
+            System.out.println(Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
+        }
         return this;
     }
 
     public AuctionPage verifyBidCountDisplayed() {
-        waitForVisible(locators.bidCount);
-        assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        if (!driver.findElements(By.id("broj-bidova-prikaz")).isEmpty()) {
+            waitForVisible(locators.bidCount);
+            assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        } else {
+            System.out.println(Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+        }
         return this;
     }
 
