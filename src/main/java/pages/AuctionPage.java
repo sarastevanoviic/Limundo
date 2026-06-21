@@ -36,32 +36,32 @@ public class AuctionPage extends BasePage {
     }
 
     public AuctionPage verifyTimeLeftDisplayed() {
-        if (!driver.findElements(By.id("preostaloVreme")).isEmpty()) {
-            waitForVisible(locators.timeLeft);
-            assertTrue(locators.timeLeft.isDisplayed(), Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
-        } else {
-            System.out.println(Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
-        }
+        boolean isPresent = !driver.findElements(By.id("preostaloVreme")).isEmpty();
+        assertTrue(isPresent, Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
+
+        waitForVisible(locators.timeLeft);
+        assertTrue(locators.timeLeft.isDisplayed(), Constants.TIME_LEFT_NOT_DISPLAYED_ERROR);
         return this;
     }
 
     public AuctionPage verifyBidCountDisplayed() {
-        if (!driver.findElements(By.id("broj-bidova-prikaz")).isEmpty()) {
-            waitForVisible(locators.bidCount);
-            assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
-        } else {
-            System.out.println(Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
-        }
+        boolean isPresent = !driver.findElements(By.id("broj-bidova-prikaz")).isEmpty();
+        assertTrue(isPresent, Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
+
+        waitForVisible(locators.bidCount);
+        assertTrue(locators.bidCount.isDisplayed(), Constants.BID_COUNT_NOT_DISPLAYED_ERROR);
         return this;
     }
 
-    public AuctionPage verifyBuyNowOptionAndPriceVisible() {
+    public AuctionPage verifyBuyNowBtnDisplayed() {
         waitForVisible(locators.buyNowBtn);
+        assertTrue(locators.buyNowBtn.isDisplayed(), Constants.BUY_NOW_OPTION_MISSING_MSG);
+        return this;
+    }
 
-        boolean isBtnVisible = locators.buyNowBtn.isDisplayed();
-        boolean isPriceVisible = locators.buyNowPrices.isDisplayed();
-
-        Assertions.assertTrue(isBtnVisible && isPriceVisible, Constants.BUY_NOW_OPTION_MISSING_MSG);
+    public AuctionPage verifyBuyNowPriceDisplayed() {
+        waitForVisible(locators.buyNowPrices);
+        assertTrue(locators.buyNowPrices.isDisplayed(), Constants.BUY_NOW_OPTION_MISSING_MSG);
         return this;
     }
 }

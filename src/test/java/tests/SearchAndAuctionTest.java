@@ -10,10 +10,11 @@ public class SearchAndAuctionTest extends BaseTest {
     @Test
     public void testSearchAndSortAuctionsThenVerifyProductDetailsTest() {
         new HomePage(driver)
-                .setSearhBar(Constants.VALID_SEARCH_TERM)
+                .setSearhBar(Constants.NEW_SEARCH_TERM)
+                .setCategory()
                 .sortByPrice()
-                .clickOnFirstAuction()
-                .verifyAuctionTitle(Constants.VALID_SEARCH_TERM)
+                .clickOnFirstItem()
+                .verifyAuctionTitle(Constants.NEW_SEARCH_TERM)
                 .verifyPriceDisplayed()
                 .verifyTimeLeftDisplayed()
                 .verifyBidCountDisplayed();

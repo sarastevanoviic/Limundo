@@ -14,7 +14,7 @@ public class Constants {
     public static final String SORT_BY_PRICE_ASC = "a[data-type='cena_ASC']";
     public static final String FRIST_AUCTION_ITEM = ".list-view-listing-item:first-of-type .content-top h3 a";
     public static final String AUCTION_TITLE = "h1.product-title.hidden-md-down";
-    public static final String CURRENT_PRICE = ".product-buy-now p span:nth-child(2)";
+    public static final String CURRENT_PRICE = "najveci_bid";
     public static final String TIME_LEFT = "preostaloVreme";
     public static final String BID_COUNT = "broj-bidova-prikaz";
     public static final String NO_RESULT_MESSAGE = ".did-you-mean-info p:nth-of-type(2)";
@@ -27,6 +27,7 @@ public class Constants {
 
     //SEARCH TERMS
     public static final String VALID_SEARCH_TERM = "iphone 14";
+    public static final String NEW_SEARCH_TERM = "iphone 11";
     public static final String INVALID_SEARCH_TERM = "xyzproizvod999";
 
     //ASSERT MESSAGES
@@ -35,7 +36,7 @@ public class Constants {
     public static final String TIME_LEFT_NOT_DISPLAYED_ERROR = "Time left is not displayed";
     public static final String BID_COUNT_NOT_DISPLAYED_ERROR = "The number of bids is not displayed";
     public static final String NO_RESULTS_SUBSTRING = "trenutno nema predmeta";
-    public static final String NO_RESULTS_MSG_ERROR = "The no-results message text does not contain the expected text!";
+    public static final String NO_RESULTS_MSG_ERROR = "The message text does not contain the expected text!";
     public static final String BUY_NOW_FILTER_NOT_SELECTED_MSG = "The 'Kupi odmah' filter is not selected!";
     public static final String BUY_NOW_OPTION_MISSING_MSG = "The 'Kupi odmah' option is not visible";
 

@@ -14,7 +14,8 @@ public class ApplyFiltersTest extends BaseTest {
                 .setSearhBar(Constants.VALID_SEARCH_TERM)
                 .selectFilter()
                 .verifyBuyNowFilterSelected()
-                .clickOnFirstAuction()
-                .verifyBuyNowOptionAndPriceVisible();
+                .clickOnFirstItem()
+                .verifyBuyNowBtnDisplayed()
+                .verifyBuyNowPriceDisplayed();
     }
 }

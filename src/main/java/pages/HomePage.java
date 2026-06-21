@@ -37,7 +37,7 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public AuctionPage clickOnFirstAuction() {
+    public AuctionPage clickOnFirstItem() {
         waitForClickable(locators.firstAuctionItem);
         locators.firstAuctionItem.click();
         return new AuctionPage(driver);
@@ -68,10 +68,4 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    public HomePage isBuyNowOptionAndPriceVisible() {
-        boolean isBtnVisible = locators.buyNowBtn.isDisplayed();
-        boolean isPriceVisible = locators.buyNowPrices.isDisplayed();
-        Assertions.assertTrue(isBtnVisible && isPriceVisible, Constants.BUY_NOW_OPTION_MISSING_MSG);
-        return this;
-    }
 }
